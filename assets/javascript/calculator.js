@@ -3,6 +3,7 @@ $(document).ready(function() {
     var operators = ["plus", "minus", "divide", "times", "power"];
     var operatorSymbols = ["+", "-", "÷", "x", "^"];
     // Your code here...
+ 
     var firstNumber = $("#first-number");
     var secondNumber = $("#second-number");
     var operator = $("#operator");
@@ -27,18 +28,20 @@ $(document).ready(function() {
 
     $(".equal").on("click", function(){
         // Convert the two numbers to numeric values
-        var firstNumber = $("#first-number").text();
-        var secondNumber = $("#second-number").text();
+        // var firstNumber = $("#first-number").text();
+        // var secondNumber = $("#second-number").text();
+        var strResult = '';
+        console.log("Number(firstNumber)=" + Number("9"));
         if (operators[operatorSymbols.indexOf(operator.text())] ==="plus") {
-            var strResult = parseInt(firstNumber) + parseInt(secondNumber);
+            strResult = Number(firstNumber.text()) + Number(secondNumber.text());
         } else if (operators[operatorSymbols.indexOf(operator.text())] ==="minus") {
-            var strResult = parseInt(firstNumber) - parseInt(secondNumber);
+            strResult = Number(firstNumber.text()) - Number(secondNumber.text());
         } else if (operators[operatorSymbols.indexOf(operator.text())] ==="divide") {
-            var strResult = parseInt(firstNumber) / parseInt(secondNumber);
+            strResult = Number(firstNumber.text()) / Number(secondNumber.text());
         } else if (operators[operatorSymbols.indexOf(operator.text())] ==="times") {
-            var strResult = parseInt(firstNumber) * parseInt(secondNumber);
+            strResult = Number(firstNumber.text()) * Number(secondNumber.text());
         } else if (operators[operatorSymbols.indexOf(operator.text())] ==="power") {
-            var strResult = Math.pow(firstNumber, parseInt(secondNumber));
+            strResult = Math.pow(Number(firstNumber.text()), Number(secondNumber.text()));
         }
         result.text(strResult);
     });
